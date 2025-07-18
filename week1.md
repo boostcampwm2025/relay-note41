@@ -100,3 +100,10 @@ Spring Boot와 기존 Spring Framework의 차이점이 무엇인가요?
 
 위 답변처럼 특정한 키워드를 설명해달라고 하지 않았는데도 "시니어 개발자", "면접을 하는 상황" 을 가정하고 사용자에게 질문을 하는 것을 확인할 수 있었습니다.
 이를 통해, 사용자는 본인이 어떤 걸 아는지, 잘 모르는지 "제대로 알 수 있는 기회"를 얻을 수 있다고 기대합니다.
+
+### 9번 피어 피드백 대화 ai로 요약하기. 
+네이버 클로바노트를 사용해 피어 피드백 시간 녹화 → 요약하기 
+금일, 피어피드백 시간이 이미 지난 관계로 릴레이 프로젝트 시간 일부분을 녹음 후 요약해보았습니다. 
+<img width="444" height="960" alt="image" src="https://github.com/user-attachments/assets/be203b69-2b1d-4a0f-aa28-8fe62f6ae1ba" />
+<img width="444" height="960" alt="image" src="https://github.com/user-attachments/assets/c6e875e6-c594-42b3-8f11-b5f8a512f0e7" />
+
