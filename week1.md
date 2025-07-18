@@ -107,3 +107,19 @@ Spring Boot와 기존 Spring Framework의 차이점이 무엇인가요?
 <img width="444" height="960" alt="image" src="https://github.com/user-attachments/assets/be203b69-2b1d-4a0f-aa28-8fe62f6ae1ba" />
 <img width="444" height="960" alt="image" src="https://github.com/user-attachments/assets/c6e875e6-c594-42b3-8f11-b5f8a512f0e7" />
 
+
+### 4컷 만화 상황 공유
+
+**커뮤니티**를 위해 다음과 같은 효과를 얻을 수 있겠습니다.
+- 공감대 형성으로 심리적 부담 완화
+- 어려운 상황을 유머로 승화하는 문화 조성
+- 익명성 보장하면서도 소통 증진
+
+실험 프롬프트는 다음과 같습니다.
+`"오늘의 상황: 디버깅 3시간째, 오타 하나 때문에 삽질
+감정 상태: 허탈 + 안도
+학습 진도: 50%
+
+이 상황을 유머러스한 4컷 만화로 그려줘"`
+
+결과는 다음과 같습니다.
