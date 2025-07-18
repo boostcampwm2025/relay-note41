@@ -125,4 +125,4 @@ Spring Boot와 기존 Spring Framework의 차이점이 무엇인가요?
 
 결과는 다음과 같습니다.
 
-<img width="1024" height="1024" alt="4cutcomics1" src="https://gist.github.com/user-attachments/assets/326c5d1a-1563-43cf-bda2-046932b008f5" />
+[![4cutcomics1.png](https://i.postimg.cc/QtKDs28M/4cutcomics1.png)](https://postimg.cc/MMwNmrjk)
