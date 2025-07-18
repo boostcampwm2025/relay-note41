@@ -129,3 +129,5 @@ Spring Boot와 기존 Spring Framework의 차이점이 무엇인가요?
 > 이 상황을 유머러스한 4컷 만화로 그려줘"`
 
 > 결과는 다음과 같습니다.
+
+[![4cutcomics1.png](https://i.postimg.cc/QtKDs28M/4cutcomics1.png)](https://postimg.cc/MMwNmrjk)
