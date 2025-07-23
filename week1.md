@@ -129,12 +129,137 @@ Spring Boot와 기존 Spring Framework의 차이점이 무엇인가요?
 
 
 <hr/>
+
 ## 미션 수행
-### J253 - 1번 미션
-원래 미션 3번 (피어 피드백 녹음 뒤 자동 요약)을 골랐었는데, 클로바 녹음을 켜니 RAM이 감당 못하고 ZOOM이 꺼졌습니다.ㅠㅠ  
-따라서 1번 미션(테스트 작성에 AI 활용하기)로 바꿔서 7.23(수)부터 진행했습니다.
+### J253
+#### 7.22(화)
+```
+피어 피드백 시간에 했던 말들이 기억 안 나는 경우가 많아서 3번 미션(피어 피드백 녹음 뒤 자동 요약)을 선택하고 클로바 노트 사용법을 학습했습니다.
+화,수,목,금에 총 4번 수행할 예정이었으나.. 실제로 ZOOM과 클로바노트 녹음을 동시에 켜니 노트북 RAM이 견디지 못하고 ZOOM이 멈추고 꺼져버렸습니다.ㅠㅠ
+```
 
 #### 7.23(수)
-- ChatGPT를 활용하여 Jest 테스트 코드 작성
+```
+RAM 이슈로 1번 미션(테스트 작성에 AI 활용하기)로 바꿔서 진행했습니다.
+- AI 모델: ChatGPT 무료 버전
+- JS 테스트 라이브러리: Jest
+```
+- `단위 설계 > 단위 구현 > 단위 테스트`를 반복하며 개발하였고, '단위 테스트' 단계에서 생성형 AI를 사용하여 테스트 코드를 작성했습니다.
+- 작성한 테스트 코드 (너무 길어서 일부만 업로드)
+```js
+import { createNode, append, insert, remove, item, clear } from "./LinkedList";
+import { MyNode } from "./types";
+
+// append
+describe("append 함수 테스트", () => {
+  test("빈 리스트(null)에 append하면 단일 노드 리스트가 된다", () => {
+    const list: MyNode | null = null;
+    const result = append(list, 10);
+    expect(result).toEqual({ value: 10, next: null });
+  });
+
+  test("기존 리스트 끝에 노드를 추가한다", () => {
+    const list: MyNode = createNode(1, createNode(2, null));
+    const result = append(list, 3);
+
+    expect(result).toEqual({
+      value: 1,
+      next: {
+        value: 2,
+        next: {
+          value: 3,
+          next: null,
+        },
+      },
+    });
+
+    // 원본 리스트는 변하지 않아야 함
+    expect(list).toEqual({
+      value: 1,
+      next: {
+        value: 2,
+        next: null,
+      },
+    });
+  });
+});
+
+// insert
+describe("insert 함수 테스트", () => {
+  test("빈 리스트에 인덱스 0에 값 삽입", () => {
+    const list: MyNode | null = null;
+    const result = insert(list, 0, 99);
+    expect(result).toEqual({ value: 99, next: null });
+  });
+
+  test("기존 리스트 앞(인덱스 0)에 값 삽입", () => {
+    const list: MyNode = createNode(1, createNode(2, null));
+    const result = insert(list, 0, 99);
+    expect(result).toEqual({
+      value: 99,
+      next: {
+        value: 1,
+        next: {
+          value: 2,
+          next: null,
+        },
+      },
+    });
+
+    // 원본 리스트는 변하지 않아야 함
+    expect(list).toEqual({
+      value: 1,
+      next: {
+        value: 2,
+        next: null,
+      },
+    });
+  });
+
+  test("기존 리스트 중간(인덱스 1)에 값 삽입", () => {
+    const list: MyNode = createNode(1, createNode(2, createNode(3, null)));
+    const result = insert(list, 1, 99);
+    expect(result).toEqual({
+      value: 1,
+      next: {
+        value: 99,
+        next: {
+          value: 2,
+          next: {
+            value: 3,
+            next: null,
+          },
+        },
+      },
+    });
+
+    expect(list).toEqual({
+      value: 1,
+      next: {
+        value: 2,
+        next: {
+          value: 3,
+          next: null,
+        },
+      },
+    });
+  });
+
+  test("인덱스가 리스트 길이보다 크면 에러 발생", () => {
+    const list: MyNode = createNode(1, null);
+    expect(() => insert(list, 2, 99)).toThrow("Index out of bounds");
+  });
+
+  test("음수 인덱스는 에러 발생", () => {
+    const list: MyNode = createNode(1, null);
+    expect(() => insert(list, -1, 99)).toThrow("Index out of bounds");
+  });
+});
+```
+AI가 테스트 코드를 작성해주니 설계, 구현, 디버깅에만 집중할 수 있어서 좋았습니다.
 
 #### 7.24(목)
+```
+
+
+```
