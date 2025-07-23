@@ -126,3 +126,15 @@ Spring Boot와 기존 Spring Framework의 차이점이 무엇인가요?
 결과는 다음과 같습니다.
 
 [![4cutcomics1.png](https://i.postimg.cc/QtKDs28M/4cutcomics1.png)](https://postimg.cc/MMwNmrjk)
+
+
+<hr/>
+## 미션 수행
+### J253 - 1번 미션
+원래 미션 3번 (피어 피드백 녹음 뒤 자동 요약)을 골랐었는데, 클로바 녹음을 켜니 RAM이 감당 못하고 ZOOM이 꺼졌습니다.ㅠㅠ  
+따라서 1번 미션(테스트 작성에 AI 활용하기)로 바꿔서 7.23(수)부터 진행했습니다.
+
+#### 7.23(수)
+- ChatGPT를 활용하여 Jest 테스트 코드 작성
+
+#### 7.24(목)
