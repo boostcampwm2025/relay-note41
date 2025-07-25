@@ -367,3 +367,86 @@ describe("💬 워커 스레드 테스트", () => {
 - 사실 바빠서 녹음만 하고 제대로 요약본을 활용해보진 못했다. 
 - 그러나 정제된 개념들을 이렇게 한눈에 다시 확인할 수 있어서 **리마인드 용도로 꽤 유용**하다고 생각된다.
 
+---
+### J-151
+
+```js
+describe("HashMap 클래스 테스트", () => {
+    test("put() & get() 테스트", () => {
+        const map1 = new HashMap();
+        const map2 = map1.put("a", 1);
+        const map3 = map2.put("b", 2);
+
+        expect(map2.get("a")).toBe(1);
+        expect(map3.get("b")).toBe(2);
+        expect(map3.get("a")).toBe(1);
+
+        // 불변성 확인
+        expect(map1.get("a")).toBeUndefined();
+        expect(map2.get("b")).toBeUndefined();
+    });
+
+    test("put() 테스트 - 동일 키 갱신", () => {
+        const map1 = new HashMap();
+        const map2 = map1.put("a", 1);
+        const map3 = map2.put("a", 999);
+
+        expect(map2.get("a")).toBe(1);
+        expect(map3.get("a")).toBe(999);
+    });
+
+    test("remove() 테스트", () => {
+        const map1 = new HashMap()
+            .put("a", 1)
+            .put("b", 2)
+            .put("c", 3);
+
+        const map2 = map1.remove("b");
+
+        expect(map1.get("b")).toBe(2);
+        expect(map2.get("b")).toBeUndefined();
+        expect(map2.get("a")).toBe(1);
+        expect(map2.get("c")).toBe(3);
+    });
+
+    test("remove() 테스트 - 존재하지 않는 키 제거", () => {
+        const map1 = new HashMap().put("a", 1);
+        const map2 = map1.remove("b");
+
+        // 변화 없어야 함
+        expect(map2.get("a")).toBe(1);
+        expect(map2.get("b")).toBeUndefined();
+    });
+
+    test("contains() 테스트", () => {
+        const map = new HashMap().put("a", 10);
+
+        expect(map.contains("a")).toBe(true);
+        expect(map.contains("b")).toBe(false);
+    });
+
+    test("keys() 테스트", () => {
+        const map = new HashMap()
+            .put("x", 1)
+            .put("y", 2)
+            .put("z", 3);
+
+        const keys = map.keys().sort();
+        expect(keys).toEqual(["x", "y", "z"].sort());
+    });
+
+    test("put(), remove() 후 불변성 유지 확인", () => {
+        const map1 = new HashMap().put("a", 1);
+        const map2 = map1.remove("a");
+
+        expect(map1.get("a")).toBe(1);
+        expect(map2.get("a")).toBeUndefined();
+    });
+});
+```
+
+Jest를 활용한 유닛 테스트를 작성하기 위해 ai를 활용했습니다.
+
+Ai가 테스트 코드를 작성해주니 저는 좀 더 구현에 집중할 수 있었습니다. 또, 아직 테스트 코드를 작성하는 것이 익숙치 않은데 ai가 작성한 테스트를 보며 배울 수 있었습니다.
+
+너무 의존하는 것은 좋지 않겠지만, 자잘한 테스트를 맡기거나 어떻게 테스트 코드를 작성할지 참고해보는 용도로 매우 유용한 것 같습니다.
