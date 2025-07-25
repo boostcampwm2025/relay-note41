@@ -339,7 +339,8 @@ describe("💬 워커 스레드 테스트", () => {
 2. 음성 녹음을 클로바 노트에 업로드하여 AI 요약 확인하기
 	- 녹음한 파일을 클로바 노트에 업로드하면 AI가 요약된 내용(주요 주제, 다음 할일, 단락별 요약)을 보여준다.
 	- <img width="313" height="153" alt="image" src="https://github.com/user-attachments/assets/79c33f8e-7c35-4734-b0ba-fa5e1e7a36a9" />
-	- <img width="830" height="285" alt="image" src="https://gist.github.com/user-attachments/assets/1307b037-78fc-4059-8beb-cdbd00ef7dbb" />
+	- <img width="703" height="213" alt="image" src="https://github.com/user-attachments/assets/8e465c2c-978c-45f5-a504-3f06a4a2ae34" />
+
 3. ChatGPT에 요약 내용을 입력하여 중요 개념 정리 요청하기
 	- 예를 들어 아래와 같은 식으로 정리된 주요 개념들을 받을 수 있다:
 	- 🎯 중요 개념 한 줄 요약 리스트
