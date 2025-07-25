@@ -331,3 +331,17 @@ describe("💬 워커 스레드 테스트", () => {
   });
 });
 ```
+
+
+
+
+
+### S004 
+#### 미션: AI로 생성한 네컷 만화 슬랙에 공유하기
+#### 미션 수행일: 7/21 월
+<img src="https://github-production-user-asset-6210df.s3.amazonaws.com/96765626/470627567-06de46d8-178a-4d56-99de-52c3cb26401f.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250725%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250725T042131Z&X-Amz-Expires=300&X-Amz-Signature=20196a06a8a1279e0400b86d64eaa81226dbc5cfa7822e060cafe9ea59049414&X-Amz-SignedHeaders=host">
+
+느낀 점: 제가 생각했던 스토리로 생성한 만화가 마침 난이도 '최상'미션이 처음으로 나온 날과 딱 맞아떨어져서 혼자 뿌듯하기도 했고,
+많은 분들이 공감하신 것 같아서 기분이 좋았습니다 ㅎㅎ 
+아이디어 고갈 이슈로 여러 개를 만들지는 못했지만 하나라도 수행하면서 슬랙에서 피어분들에게 😃사소한 재미를 드릴 수 있어서 재미있었고
+저 뿐만 아니라 다른 분들이 만들어서 올려주신 만화도 재미있게 봤습니다!
