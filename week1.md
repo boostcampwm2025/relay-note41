@@ -264,7 +264,7 @@ describe("insert 함수 테스트", () => {
 AI가 테스트 코드를 작성해주니 설계, 구현, 디버깅에만 집중할 수 있어서 좋았습니다.
 
 #### 7.24(목)
-```
+```js
 const path = require("path");
 const {
   createThread,
