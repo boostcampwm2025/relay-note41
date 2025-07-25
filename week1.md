@@ -265,6 +265,69 @@ AI가 테스트 코드를 작성해주니 설계, 구현, 디버깅에만 집중
 
 #### 7.24(목)
 ```
+const path = require("path");
+const {
+  createThread,
+  sendToThread,
+  listenFromThread,
+  terminateThread,
+  createSharedMemory,
+} = require("./main");
 
+describe("💬 워커 스레드 테스트", () => {
+  let thread;
 
+  beforeEach(() => {
+    const threadPath = path.resolve(__dirname, "thread.js");
+    thread = createThread(threadPath, { init: "테스트 시작" });
+  });
+
+  afterEach(async () => {
+    await terminateThread(thread);
+  });
+
+  test("✅ 스레드가 정상 생성되고 종료된다", async () => {
+    expect(thread).toBeDefined();
+    expect(typeof thread.postMessage).toBe("function");
+
+    const result = await terminateThread(thread);
+    expect(result).toBe(0);
+  });
+
+  test("✅ 메인 → 스레드 → 메인 메시지 전송", async () => {
+    const message = { hello: "world" };
+
+    sendToThread(thread, message);
+    const response = await listenFromThread(thread);
+
+    expect(response).toEqual({
+      threadId: expect.any(Number),
+      received: message,
+      processed: true,
+    });
+  });
+
+  test("✅ SharedArrayBuffer 생성 및 공유 배열 동작", () => {
+    const length = 10;
+    const sharedArray = createSharedMemory(length);
+
+    expect(sharedArray).toBeInstanceOf(Int32Array);
+    expect(sharedArray.length).toBe(length);
+
+    sharedArray[0] = 42;
+    expect(sharedArray[0]).toBe(42);
+  });
+
+  test("✅ 여러 메시지를 순차적으로 주고받기", async () => {
+    const messages = [{ task: "1번" }, { task: "2번" }, { task: "3번" }];
+
+    for (const msg of messages) {
+      sendToThread(thread, msg);
+      const res = await listenFromThread(thread);
+
+      expect(res.received).toEqual(msg);
+      expect(res.processed).toBe(true);
+    }
+  });
+});
 ```
