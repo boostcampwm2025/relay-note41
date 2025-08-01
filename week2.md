@@ -192,4 +192,5 @@ https://g.co/gemini/share/b8b031eacb03
 마지막으로 슬랙 random 채널에 공유하였다. 
 
 <img width="1970" height="688" alt="image" src="https://github.com/user-attachments/assets/f7b7b9de-8ea9-4864-82fc-01ea995e3d28" />
+
 ---
