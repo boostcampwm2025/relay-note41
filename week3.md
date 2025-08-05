@@ -162,16 +162,87 @@
 ---
 
 `J060_김윤영`<br>
-수행할 퀘스트 : 퀘스트를 입력해주세요!
+수행할 퀘스트 : 1\.설계를 AI로 시각화하기
 <br>
-선정 이유 : 이유를 입력해주세요!
+선정 이유 : 미션을 진행하면서 도움을 받을 수 있는 퀘스트이기에 선택했다.
 
 <details>
 <summary> 수행 과정 </summary>
+Day16. 벡터DB 만들기 미션에서 진행하였다. <br>
+1. 보다 완성도 높은 다이어그램을 위해 최대한 자세히 설계한다.
+2. 생성할 다이어그램을 선택한다. (클래스 다이어그램으로 선정했다.)
+3. 설계한 내용을 AI에게 mermaid로 다이어그램 코드를 생성한다.
 
-
- 
 </details>
+
+-   `<details>` 태그 안에서 코드 블럭을 인식하지 않아 밖으로 빼 두었다.
+
+    ```mermaid
+    classDiagram
+        class CLI {
+            - VectorDBMS vectorDBMS
+            - Logger logger
+            - readline.Interface rl
+            + async init()
+            + parseInput(input)
+            + validateCommand(command)
+            + async run()
+        }
+
+        class VectorDBMS {
+            - VectorDB vectorDB
+            - TransformersEmbedder embedder
+            + async init()
+            + async add(id)
+            + async remove(id)
+            + cosineSimilarity(a, b)
+            + async searchByKNN(text, k)
+        }
+
+        class VectorDB {
+            - string filePath
+            - string|null dimension
+            - Map~string, number[]~ data
+            - VectorDBValidator validator
+            + async isFileExists()
+            + async init(dimension)
+            + async save()
+            + async load()
+            + async add(id, vector)
+            + async remove(id)
+            + getVector(id)
+            + getData()
+        }
+
+        class Logger {
+            + logHeader()
+            + logAdd(id, duration)
+            + logRemove(id, duration)
+            + logSearchByKNN(array, duration)
+        }
+
+        class TransformersEmbedder {
+            - string modelName
+            - object|null embedder
+            + async initialize()
+            + async embed(text)
+            + getDimension()
+        }
+
+        class VectorDBValidator {
+            + validateDimension(vector, dimension)
+            + validateIDExists(id, map)
+            + validateIDNotExists(id, map)
+            + validateJsonStructure(json, dimension)
+        }
+
+        CLI --> VectorDBMS : has
+        CLI --> Logger : has
+        VectorDBMS --> VectorDB : has
+        VectorDBMS --> TransformersEmbedder : has
+        VectorDB --> VectorDBValidator : has
+
+    ```
 
 ---
 
